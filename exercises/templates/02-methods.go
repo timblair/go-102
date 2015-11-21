@@ -10,7 +10,9 @@ package main
 
 // Declare a struct type `player` to maintain information about a player.
 
-// Declare a method that calculates the win ratio for the player.
+// Declare a method that calculates the win ratio for the player.  Note that
+// you'll likely need to convert one or more values to floats, which can be
+// done like: float32(intValue)
 func ( /* receiver */ ) funcName() /* return type */ {
 }
 

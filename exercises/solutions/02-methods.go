@@ -16,8 +16,8 @@ type player struct {
 }
 
 // Declare a method that calculates the win ratio for the player.  Note that
-// you'll likely need to cast one or more values to floats, which can be done
-// like: float32(intValue)
+// you'll likely need to convert one or more values to floats, which can be
+// done like: float32(intValue)
 func (p player) winRatio() float32 {
 	return float32(p.wins) / float32(p.matches)
 }
