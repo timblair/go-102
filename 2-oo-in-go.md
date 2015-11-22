@@ -2,33 +2,43 @@
 
 ## 2. Object-Oriented Programming in Go
 
-### OO Concepts Recap
+From the [Go FAQ](https://golang.org/doc/faq#Is_Go_an_object-oriented_language):
+
+> Is Go an object-oriented language?  Yes and no.
+
+Go has no classes or type hierarchy, no inheritance or subclassing, and
+no explicit interfaces. But Go has types and methods and allows an
+object-oriented style of programming.
 
 OO is a software design philosophy, based around the concept of modelling
-real-world or abstract "objects" in code.  There are four primary concepts that
-are generally cited as a requirement for a language to be "object oriented":
+real-world or abstract "objects" in code.  There are four primary principles
+that are generally cited as a requirement for a language to be "object
+oriented":
 
-1. *Encapsulation*: the wrapping of the data and behaviour associated with an
-   object, generally achieved by creating instances of classes which expose
-   public methods and properties, while restricting access to internal values.
-1. *Abstraction*: 
-1. *Inheritance*: is a method of code reuse, and is the ability for a class to
-   "inherit" features of another class.
+1. *Abstraction* is the concept of exposing only the essential characteristics
+   and behaviour of an object to a collaborator, so as to provide a simple
+   external interface.
+
+1. *Encapsulation* is complementary to abstraction.  Whereas abstraction
+   focuses on the observable behaviour of an object, encapsulation focuses on
+   the implementation of that object which gives rise to the behaviour, through
+   the wrapping of data and behaviour into a single unit (usually a class).
+
+1. *Inheritance* is a method of code reuse, and is the ability for a class to
+   "inherit" features of another class through subclassing.
+
 1. *Polymorphism* is the application of a single interface to objects of
-   different types, generally in the form of subtyping (where different classes
-   are related by some common superclass).
+   different types.
 
-There are numerous definitions of
-"an object" in terms of software, but we'll use the following simple
-definition:
+Although these principles are taken by many to be absolutely essential for any
+language which claims to support OOP, we're going to scale things back.  At the
+simplest level, OOP is about objects.  There are numerous definitions of "an
+object" in terms of software, but we'll use the following simple definition:
 
 > An object is a data structure that has both state and behaviour.
 
-
-...
-
-Go is different to other OO languages you may have used: there are no classes,
-no subclasses or class heirarchy, no explicit interfaces, no inheritence.
+Go's type system and the ability to create methods on types gives us the
+ability to create these "objects," so let's see how it's done.
 
 
 ### Methods
@@ -62,9 +72,9 @@ turning the function into a method.
 
 > A method is a function that is bound to a receiver.
 
-Go does not have classes, but you can define methods on any type (that isn't a
-built-in type).  The method receiver appears in its own argument list between
-the func keyword and the method name.
+Go does not have classes, but you can define methods on any type.  The method
+receiver appears in its own argument list between the func keyword and the
+method name.
 
 ```go
 type Rectangle struct {
