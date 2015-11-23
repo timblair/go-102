@@ -28,7 +28,8 @@ oriented":
    "inherit" features of another class through subclassing.
 
 1. *Polymorphism* is the application of a single interface to objects of
-   different types.
+   different types, allowing those objects to be treated similarly based on
+   their behaviour rather than their type.
 
 Although these principles are taken by many to be absolutely essential for any
 language which claims to support OOP, we're going to scale things back.  At the
