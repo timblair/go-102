@@ -228,12 +228,138 @@ fmt.Println(e)
 
 ### Embedding
 
+Go's type system does not typical OO inheritance; instead it supports
+composition with the ability to "borrow" functionality by embedding named types
+as anonymous fields of another struct type through a process called _type
+embedding_.
+
+Let's define two types that are shapes inside a 3D drawing package:
+
+```go
+type Sphere struct {
+	X, Y, Z, Radius int
+}
+
+type Cube struct {
+	X, Y, Z, Length int
+}
+```
+
+Looking at these two types, and considering what new types we might want to
+create, we can see that the location of the shape is common to all shapes, so
+we're going to get a lot of repetition.
+
+We can factor out the common parts (the location) by creating a `Point` type,
+but this can make accessing the fields cumbersome and verbose, especially if we
+then used these types as part of further types.
+
+```go
+type Point struct {
+	X, Y, Z int
+}
+
+type Sphere struct {
+	Point Point
+	Radius int
+}
+
+type Cube struct {
+	Point Point
+	Length int
+}
+
+var s Sphere
+s.Location.X = 5
+s.Location.Y = 5
+s.Radius = 3
+```
+
+Go allows us to declare a field with a type but no name.  These fields are
+called _anonymous fields_, and are said to be _embedded_ within the type.  For
+example, we can embed `Point` within `Sphere` and `Cube`.
+
+
+```go
+type Point struct {
+	X, Y, Z int
+}
+
+type Sphere struct {
+	Point
+	Radius int
+}
+
+type Cube struct {
+	Point
+	Length int
+}
+```
+
+Go automatically "promotes" the embedded types so the fields within those types
+are accessible from the top level.
+
+```go
+var s Sphere
+s.X = 5       // equivalent to s.Point.X = 5
+s.Y = 5       // equivalent to s.Point.Y = 5
+s.Z = 5       // equivalent to s.Point.Z = 5
+s.Radius = 3
+```
+
+The inner type promotion works not just for the fields of embedded types, but
+also for methods on the inner type. This is the primary mechanism through which
+complex object behaviours are composed from simpler ones in Go.
+
+```go
+type Robot struct { }
+func (r Robot) Talk() { fmt.Println("Bzzzzzbt") }
+
+type Robby struct {
+	Robot
+}
+
+robby := Robby{}
+robby.Talk()   // Bzzzzzbt
+```
+
+The outer type can override the inner type's behaviour.
+
+```go
+type Robot struct { }
+func (r Robot) Talk() { fmt.Println("Bzzzzzbt") }
+
+type Robby struct {
+	Robot
+}
+func (r Robot) Talk() { fmt.Println("Again?") }
+
+robby := Robby{}
+robby.Talk()   // Again?
+```
+
+And methods promoted from an inner type can also allow the outer type so
+satisfy an interface.
+
+```go
+type Talker interface { Talk() }
+
+type Robot struct{}
+func (r Robot) Talk() { fmt.Println("Bzzzzzbt") }
+
+type Robby struct { Robot }
+
+func talk(t Talker) {
+	t.Talk()
+}
+
+talk(Robby{})
+```
+
+#### Exercise #4
+
 ...
+
 
 ### Composition
 
 ...
-
-> Everyone knows composition is more powerful than inheritance, Go just makes
-> this non optional.
--- http://dave.cheney.net/2015/11/15/the-legacy-of-go
