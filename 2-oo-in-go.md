@@ -377,7 +377,10 @@ talk(Robby{})
 
 #### Exercise #4
 
-...
+> Create a user type, and an admin type that embeds a user. Create a Notifier
+> interface, and make your user type satisfy that interface. Write a function
+> that accepts a value of the interface type, and ensure it works correctly
+> when passed a value of your admin type.
 
 
 ### Composition
