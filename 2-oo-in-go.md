@@ -306,6 +306,26 @@ s.Z = 5       // equivalent to s.Point.Z = 5
 s.Radius = 3
 ```
 
+Although embedded fields are known as _anonymous_, that's not strictly true:
+they do have names, which are the same as the type name, and using these names
+is optional in dot expressions.
+
+There is no shorthand for defining struct literals with embedded types, so we
+have to declare each embedded type explicitly.
+
+```go
+s1 := Sphere{Point{1, 2, 3}, 5}
+
+s2 := Sphere{
+	Point: Point{
+		1,
+		2,
+		3,
+	},
+	Radius: 5,   // required trailing comma
+}
+```
+
 The inner type promotion works not just for the fields of embedded types, but
 also for methods on the inner type. This is the primary mechanism through which
 complex object behaviours are composed from simpler ones in Go.
