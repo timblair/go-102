@@ -391,9 +391,19 @@ if rand.Intn(10) == 0 {
 }
 ```
 
+Putting it all together, we can run our point.
 
-
-
+```
+$ go run tennis.go
+Venus hit the ball
+Serena hit the ball
+Venus hit the ball
+Serena hit the ball
+Venus hit the ball
+Serena hit the ball
+Venus missed the ball
+Serena won!
+```
 
 #### Exercise #7
 
