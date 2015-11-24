@@ -479,6 +479,8 @@ func main() {
 
 	fmt.Printf("Location: %v; Passengers: %d; Loaded: %t\n",
 		t.Point, t.Passengers, t.Loaded)
+
+	// Location: {10 20}; Passengers: 6; Loaded: false
 }
 ```
 
