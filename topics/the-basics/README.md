@@ -1,6 +1,6 @@
 # Go 102 Workshop
 
-## 1. The Basics
+## The Basics
 
 ### Hello World
 
@@ -142,7 +142,7 @@ func f6() (int, string) {   // Multiple return values
 }
 ```
 
-## Exercise #1
+## Exercise
 
 > Declare a struct type to maintain information about a person.  Declare a
 > function that creates new values of your type.  Call this function from main
