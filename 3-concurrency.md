@@ -343,32 +343,46 @@ point.
 var wg sync.WaitGroup
 
 func main() {
-	court := make(chan struct{}) // Create an unbuffered channel.
-	wg.Add(2) // Add a count of two, one for each goroutine.
+	court := make(chan struct{}) // An unbuffered channel.
+	wg.Add(2) // Add two to the WG, one for each player.
 
 	// Launch two players.
 	go player("Serena", court)
 	go player("Venus", court)
 
-	court <- struct{}{} // Start the set.
+	court <- struct{}{} // Serve the "ball."
 	wg.Wait()  // Wait for the game to finish.
 }
 ```
 
-Now we'll define the function that represents the player.  First, we wait to
-receive the ball; if the `court` channel has been closed, we use this to
-signify that the other player missed the ball, so this player is the winner.
-We then send the ball back on the channel to signify a successful return.
+Now we'll define the function that represents the player.  We'll start simple:
+we create an infinite loop that waits for the ball (receives on the `court`
+channel), and then hits it back (sends to the channel).
 
 ```go
 func player(name string, court chan struct{}) {
-	defer wg.Done()
+	for {
+		ball := <-court
+		fmt.Println(name, "hit the ball")
+		court <- ball // Hit the ball back.
+	}
+}
+```
 
+We're going to use the notification mechanism we described previously about
+closing the channel to signify the end of the point: if a player tries to
+recieve the ball, and the channel is closed, then the other player missed the
+ball.  We change our receive to the two-value format; if `ok` is `false`, then
+the channel is closed, and our player won the point!
+
+
+```go
+func player(name string, court chan struct{}) {
 	for {
 		ball, ok := <-court
 		if !ok { // If the channel was closed we won.
 			fmt.Println(name, "won!")
-			return // Trigger the deferred wg.Done()
+			return
 		}
 
 		fmt.Println(name, "hit the ball")
@@ -377,17 +391,48 @@ func player(name string, court chan struct{}) {
 }
 ```
 
-With what we have, no one would ever miss the ball, so the point would go on
+
+With that, no one would ever miss the ball, so the point would go on
 forever!  Let's add something to the `player()` function to randomly determine
 if the player misses the ball.  If they do, we'll close the `court` channel to
 signify that the point is over.
 
 ```go
-// Pick a random number and see if we miss the ball.
-if rand.Intn(10) == 0 {
-	fmt.Println(name, "missed the ball")
-	close(court) // Close the channel to signal we lost.
-	return       // Trigger the deferred wg.Done()
+func player(name string, court chan struct{}) {
+	for {
+		// Receive step excluded...
+
+		if rand.Intn(10) == 0 {  // Decide if we missed the ball.
+			fmt.Println(name, "missed the ball")
+			close(court) // Close the channel to signal we lost.
+			return
+		}
+
+		fmt.Println(name, "hit the ball")
+		court <- ball // Hit the ball back.
+	}
+}
+```
+
+We're almost done.  The players can hit the ball back, may (or may not) miss
+the ball, and can recognise when the other player has missed.
+
+The only thing missing is that fact that our WaitGroup is still blocked,
+because we've never decreased the count from it, so our `main()` routine will
+block forever.  It's like the players know what's going on, but the umpire has
+fallen asleep in his chair.
+
+That's easily solved by defering a call to `wg.Done()` within the player
+function, so each time a player goroutine finishes (i.e. we hit a `return`
+statement), that semaphore is decreased.
+
+```go
+func player(name string, court chan struct{}) {
+	defer wg.Done()
+
+	for {
+        // ...
+	}
 }
 ```
 
