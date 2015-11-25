@@ -44,14 +44,25 @@ Playground](http://play.golang.org/) instead for the exercises.
 
 ## Exercises
 
-There are [templates](exercises/templates) available for each of the exercises.
-Simply copy the template into a new file in an empty directory under the `src`
-directory in your `$GOPATH` and fill in the blanks.  Alternatively, follow the
-link to the template already set up in the Go Playground, and work from there
-instead.
+There are templates available for each of the exercises.  If you've cloned this
+repo under your `$GOPATH` then you can just edit and run the template file in
+place.  Alternatively, follow the link to the template already set up in the Go
+Playground, and work from there instead.
 
-* [Exercise #1: The Basics](exercises/templates/01-basics.go)
-* [Exercise #2: Methods](exercises/templates/02-methods.go)
+* The Basics: [source](topics/the-basics/exercises/basics/template/basics.go) /
+  [playground](http://play.golang.org/p/ta6oFzjgwn)
+* Object Orientation
+  * Methods: [source](topics/object-orientation/exercises/methods/template/methods.go) /
+    [playground](http://play.golang.org/p/jnBw-jtE3n)
+  * Interfaces: [source](topics/object-orientation/exercises/methods/template/methods.go) /
+    [playground](http://play.golang.org/p/rL5tT2VTJH)
+  * Embedding: [source](topics/object-orientation/exercises/embedding/template/embedding.go) /
+    [playground](http://play.golang.org/p/5qrrcfHdiZ)
+* Concurrency
+  * Goroutines: [source](topics/concurrency/exercises/goroutines/template/goroutines.go) /
+    [playground](http://play.golang.org/p/EH_16WR5ND)
+  * Channels: [source](topics/concurrency/exercises/channels/template/channels.go) /
+    [playground](http://play.golang.org/p/H4F9aLKQVA)
 
-Example [solutions](exercises/solutions) are also available, but don't look at
-those until you've had a go yourself!
+Example solutions are also available, but don't look at those until you've had
+a go yourself!
