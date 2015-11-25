@@ -2,7 +2,7 @@
 // and a function representing a runner.  Pass a baton between runners over the
 // channel, and end the race when the fourth runner receives the baton.
 //
-// Template available at: http://play.golang.org/p/...
+// Template available at: http://play.golang.org/p/H4F9aLKQVA
 package main
 
 // Add your imports here.

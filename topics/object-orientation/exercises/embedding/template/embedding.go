@@ -3,7 +3,7 @@
 // that accepts a value of the interface type, and ensure it works correctly
 // when passed a value of your admin type.
 //
-// Template available at: http://play.golang.org/p/...
+// Template available at: http://play.golang.org/p/5qrrcfHdiZ
 package main
 
 // Add your imports here.

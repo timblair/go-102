@@ -2,7 +2,7 @@
 // function that creates new values of your type.  Call this function from main
 // and display the value.
 //
-// Template available at: http://play.golang.org/p/...
+// Template available at: http://play.golang.org/p/ta6oFzjgwn
 package main
 
 // Add your imports here.

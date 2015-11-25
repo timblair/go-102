@@ -3,7 +3,7 @@
 // this type that calculates the win ratio for the player.  Create a new
 // player, and output the win ratio for them.
 //
-// Template available at: http://play.golang.org/p/...
+// Template available at: http://play.golang.org/p/jnBw-jtE3n
 package main
 
 // Add your imports here.

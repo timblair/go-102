@@ -3,7 +3,7 @@
 // function that accepts a value of your interface type and outputs the area,
 // and call this function for different shapes.
 //
-// Template available at: http://play.golang.org/p/...
+// Template available at: http://play.golang.org/p/rL5tT2VTJH
 package main
 
 // Add your imports here.
