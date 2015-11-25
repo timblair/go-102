@@ -3,7 +3,7 @@
 // channel, and end the race when the fourth runner receives the baton.
 package main
 
-// Add your imports here
+// Add your imports here.
 import (
 	"fmt"
 	"sync"

@@ -4,10 +4,10 @@
 // when passed a value of your admin type.
 package main
 
-// Add your imports here
+// Add your imports here.
 import "fmt"
 
-// Define a `notifier` interface
+// Define a `notifier` interface.
 type notifier interface {
 	notify()
 }
@@ -22,7 +22,7 @@ func (u user) notify() {
 	fmt.Printf("Sending email to %s at %s\n", u.name, u.email)
 }
 
-// Create an `admin` type which embeds a user, and has a security level
+// Create an `admin` type which embeds a user, and has a security level.
 type admin struct {
 	user
 	level int
@@ -35,7 +35,7 @@ func sendNotification(n notifier) {
 }
 
 func main() {
-	// Create an admin user
+	// Create an admin user.
 	user := admin{
 		user: user{
 			name:  "Tim Blair",
@@ -44,6 +44,6 @@ func main() {
 		level: 10,
 	}
 
-	// Send the admin a notification via the function you created
+	// Send the admin a notification via the function you created.
 	sendNotification(user)
 }

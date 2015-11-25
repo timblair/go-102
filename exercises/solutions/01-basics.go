@@ -3,7 +3,7 @@
 // and display the value.
 package main
 
-// Add your imports here
+// Add your imports here.
 import "fmt"
 
 // Declare a struct type `person` to maintain information about a person.

@@ -6,7 +6,7 @@
 // Template available at: http://play.golang.org/p/...
 package main
 
-// Add your imports here
+// Add your imports here.
 
 // Declare a struct type `player` to maintain information about a player.
 

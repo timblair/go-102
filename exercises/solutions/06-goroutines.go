@@ -1,11 +1,9 @@
 // Create two anonymous functions: one that outputs integers from 1 to 100; the
 // other from 100 to 1.  Start each function as a goroutine.  Use a WaitGroup
 // to ensure that main() doesn't exit until the goroutines are done.
-//
-// Template available at: http://play.golang.org/p/...
 package main
 
-// Add your imports here
+// Add your imports here.
 import (
 	"fmt"
 	"sync"

@@ -4,7 +4,7 @@
 // and call this function for different shapes.
 package main
 
-// Add your imports here
+// Add your imports here.
 import (
 	"fmt"
 	"math"

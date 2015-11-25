@@ -4,9 +4,8 @@
 // player, and output the win ratio for them.
 package main
 
+// Add your imports here.
 import "fmt"
-
-// Add your imports here
 
 // Declare a struct type `player` to maintain information about a player.
 type player struct {
@@ -17,7 +16,7 @@ type player struct {
 
 // Declare a method that calculates the win ratio for the player.  Note that
 // you'll likely need to convert one or more values to floats, which can be
-// done like: float32(intValue)
+// done like: float32(intValue).
 func (p player) winRatio() float32 {
 	return float32(p.wins) / float32(p.matches)
 }

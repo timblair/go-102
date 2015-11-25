@@ -6,7 +6,7 @@
 // Template available at: http://play.golang.org/p/...
 package main
 
-// Add your imports here
+// Add your imports here.
 
 // Define an interface with a method area().  Make sure you use a meaningful
 // name and a sensible return type.

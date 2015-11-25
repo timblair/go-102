@@ -5,7 +5,7 @@
 // Template available at: http://play.golang.org/p/...
 package main
 
-// Add your imports here
+// Add your imports here.
 
 // Declare a struct type `person` to maintain information about a person.
 
