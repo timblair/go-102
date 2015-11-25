@@ -1,5 +1,5 @@
-// Define an interface which defines a method Area().  Create types for Square,
-// Rectangle and Circle, and ensure they satisfy your interface.  Create a
+// Define an interface which defines a method area().  Create types for square,
+// rectangle and circle, and ensure they satisfy your interface.  Create a
 // function that accepts a value of your interface type and outputs the area,
 // and call this function for different shapes.
 //
@@ -8,12 +8,12 @@ package main
 
 // Add your imports here
 
-// Define an interface with a method Area().  Make sure you use a meaningful
+// Define an interface with a method area().  Make sure you use a meaningful
 // name and a sensible return type.
 
-// Create Square, Rectangle and Circle types, and ensure they satisfy your
+// Create square, rectangle and circle types, and ensure they satisfy your
 // interface (you'll need to use the `Pi` constant from the `math` package for
-// your Circle).
+// your circle).
 
 // Write a function that accepts a value of your interface and outputs the
 // area.

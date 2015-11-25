@@ -1,4 +1,4 @@
-// Create a user type, and an admin type that embeds a user. Create a Notifier
+// Create a user type, and an admin type that embeds a user. Create a notifier
 // interface, and make your user type satisfy that interface. Write a function
 // that accepts a value of the interface type, and ensure it works correctly
 // when passed a value of your admin type.
@@ -7,41 +7,41 @@ package main
 // Add your imports here
 import "fmt"
 
-// Define a Notifier interface
-type Notifier interface {
-	Notify()
+// Define a `notifier` interface
+type notifier interface {
+	notify()
 }
 
-// Create a User type, with fields for name and email address.  Ensure your
+// Create a `user` type, with fields for name and email address.  Ensure your
 // type satisfies the Notifier interface.
-type User struct {
-	Name, Email string
+type user struct {
+	name, email string
 }
 
-func (u User) Notify() {
-	fmt.Printf("Sending email to %s at %s\n", u.Name, u.Email)
+func (u user) notify() {
+	fmt.Printf("Sending email to %s at %s\n", u.name, u.email)
 }
 
-// Create an Admin type which embeds a User, and has a security level
-type Admin struct {
-	User
-	Level int
+// Create an `admin` type which embeds a user, and has a security level
+type admin struct {
+	user
+	level int
 }
 
 // Write a function that accepts a value of your interface and calls the method
 // associated with that interface.
-func sendNotification(n Notifier) {
-	n.Notify()
+func sendNotification(n notifier) {
+	n.notify()
 }
 
 func main() {
 	// Create an admin user
-	user := Admin{
-		User: User{
-			Name:  "Tim Blair",
-			Email: "tim@bla.ir",
+	user := admin{
+		user: user{
+			name:  "Tim Blair",
+			email: "tim@bla.ir",
 		},
-		Level: 10,
+		level: 10,
 	}
 
 	// Send the admin a notification via the function you created

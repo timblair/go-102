@@ -13,13 +13,13 @@ type person struct {
 }
 
 // Declare a function that creates new values of your `person` type.
-func NewPerson(name string, age int) person {
+func newPerson(name string, age int) person {
 	return person{name, age}
 }
 
 func main() {
 	// Use you function to create a new value of type `person`.
-	p := NewPerson("Bobby", 22)
+	p := newPerson("Bobby", 22)
 
 	// Output the value of your person.
 	fmt.Println(p)
