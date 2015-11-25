@@ -454,4 +454,6 @@ Serena won!
 
 #### Exercise #7
 
-...
+> Let's simulate a track relay race.  Create a channel representing a track,
+> and a function representing a runner.  Pass a baton between runners over the
+> channel, and end the race when the fourth runner receives the baton.
