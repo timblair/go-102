@@ -110,3 +110,11 @@ fmt.Println(e)
 > rectangle and circle, and ensure they satisfy your interface.  Create a
 > function that accepts a value of your interface type and outputs the area,
 > and call this function for different shapes.
+
+* Exercise template: [source][ts] / [playground][tp]
+* Example solution: [source][ss] / [playground][sp]
+
+[ts]: exercises/interfaces/template/interfaces.go
+[tp]: http://play.golang.org/p/rL5tT2VTJH
+[ss]: exercises/interfaces/solution/interfaces.go
+[sp]: http://play.golang.org/p/bwXmMNW2ed

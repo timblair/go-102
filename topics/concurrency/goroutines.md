@@ -155,3 +155,11 @@ the total time taken is approximately that for a single call to `doWork()`.
 > Create two anonymous functions: one that outputs integers from 1 to 100; the
 > other from 100 to 1.  Start each function as a goroutine.  Use a WaitGroup to
 > ensure that main() doesn't exit until the goroutines are done.
+
+* Exercise template: [source][ts] / [playground][tp]
+* Example solution: [source][ss] / [playground][sp]
+
+[ts]: exercises/goroutines/template/goroutines.go
+[tp]: http://play.golang.org/p/EH_16WR5ND
+[ss]: exercises/goroutines/solution/goroutines.go
+[sp]: http://play.golang.org/p/XWzbS3kU7l

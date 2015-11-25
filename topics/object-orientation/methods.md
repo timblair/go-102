@@ -77,3 +77,11 @@ argument, just as happens in the function version.
 > including the number of matches played and the number won.  Add a method to
 > this type that calculates the win ratio for the player.  Create a new player,
 > and output the win ratio for them.
+
+* Exercise template: [source][ts] / [playground][tp]
+* Example solution: [source][ss] / [playground][sp]
+
+[ts]: exercises/methods/template/methods.go
+[tp]: http://play.golang.org/p/jnBw-jtE3n
+[ss]: exercises/methods/solution/methods.go
+[sp]: http://play.golang.org/p/IxxPLmfdE9

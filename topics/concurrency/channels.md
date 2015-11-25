@@ -287,3 +287,11 @@ Serena won!
 > Let's simulate a track relay race.  Create a channel representing a track,
 > and a function representing a runner.  Pass a baton between runners over the
 > channel, and end the race when the fourth runner receives the baton.
+
+* Exercise template: [source][ts] / [playground][tp]
+* Example solution: [source][ss] / [playground][sp]
+
+[ts]: exercises/channels/template/channels.go
+[tp]: http://play.golang.org/p/H4F9aLKQVA
+[ss]: exercises/channels/solution/channels.go
+[sp]: http://play.golang.org/p/eNglulpfz2

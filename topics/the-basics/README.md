@@ -147,3 +147,11 @@ func f6() (int, string) {   // Multiple return values
 > Declare a struct type to maintain information about a person.  Declare a
 > function that creates new values of your type.  Call this function from main
 > and display the value.
+
+* Exercise template: [source][ts] / [playground][tp]
+* Example solution: [source][ss] / [playground][sp]
+
+[ts]: exercises/basics/template/basics.go
+[tp]: http://play.golang.org/p/ta6oFzjgwn
+[ss]: exercises/basics/solution/basics.go
+[sp]: http://play.golang.org/p/xTcpaKL4KG

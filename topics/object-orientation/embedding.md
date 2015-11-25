@@ -157,3 +157,11 @@ talk(Robby{})
 > interface, and make your user type satisfy that interface. Write a function
 > that accepts a value of the interface type, and ensure it works correctly
 > when passed a value of your admin type.
+
+* Exercise template: [source][ts] / [playground][tp]
+* Example solution: [source][ss] / [playground][sp]
+
+[ts]: exercises/embedding/template/embedding.go
+[tp]: http://play.golang.org/p/5qrrcfHdiZ
+[ss]: exercises/embedding/solution/embedding.go
+[sp]: http://play.golang.org/p/BU033x1m6s
