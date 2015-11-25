@@ -282,6 +282,9 @@ Venus missed the ball
 Serena won!
 ```
 
+A complete, runnable version of the above example can be found on the [Go
+Playground](http://play.golang.org/p/Q4z-QyL4D8).
+
 #### Exercise
 
 > Let's simulate a track relay race.  Create a channel representing a track,

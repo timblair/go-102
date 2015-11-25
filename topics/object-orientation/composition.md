@@ -102,3 +102,6 @@ func main() {
 	// Location: {10 20}; Passengers: 6; Loaded: false
 }
 ```
+
+A complete, runnable version of the above example can be found on the [Go
+Playground](http://play.golang.org/p/IgLAwNX5ut).
