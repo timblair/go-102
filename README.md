@@ -6,11 +6,16 @@ The principle goal of this workshop it to get you excited about Go! We’ll be
 focussing on two key areas: object oriented development in Go, and the powerful
 primitives which make concurrent programming in Go a breeze.
 
-* [Introduction](1-the-basics.md): built-in types, variable declaration,
+* [Introduction](topics/the-basics): built-in types, variable declaration,
   function and custom types.
-* [Object oriented development](2-oo-in-go.md): methods, interfaces, embedding
-  and composition.
-* [Concurrency](3-concurrency.md): goroutines and channels.
+* [Object oriented development](topics/object-orientation):
+  [methods](topics/object/orientation/methods.md),
+  [interfaces](topics/object/orientation/methods.md),
+  [embedding](topics/object/orientation/methods.md) and
+  [composition](topics/object/orientation/composition.md).
+* [Concurrency](topics/concurrency):
+  [goroutines](topics/concurrency/goroutines.md) and
+  [channels](topics/concurrency/channels.md).
 
 In each section we'll walk through a number of examples and code samples, and
 will work through some coding exercises in pairs, either using a local Go
