@@ -223,7 +223,10 @@ fmt.Println(e)
 
 #### Exercise #3
 
-...
+> Define an interface which defines a method area().  Create types for square,
+> rectangle and circle, and ensure they satisfy your interface.  Create a
+> function that accepts a value of your interface type and outputs the area,
+> and call this function for different shapes.
 
 
 ### Embedding
