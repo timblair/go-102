@@ -25,8 +25,10 @@ software development (in any language).
 
 I will recap some basics at the beginning of the workshop, but you'll get more
 out of it if you already have knowledge of variable declaration, functions, and
-struct types. I suggest you watch the first half of my recent introductory talk
-on Go (the "Data & Types" section), or a least look through the slide deck.
+struct types. I suggest you watch the first half of my recent [introductory
+talk on Go](https://vimeo.com/140410716) (the "Data & Types" section), or a
+least look through the [slide
+deck](https://speakerdeck.com/timblair/introduction-to-go).
 
 ## What You'll Need to Bring
 
