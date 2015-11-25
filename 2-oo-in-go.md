@@ -486,7 +486,3 @@ func main() {
 	// Location: {10 20}; Passengers: 6; Loaded: false
 }
 ```
-
-#### Exercise #5
-
-...
