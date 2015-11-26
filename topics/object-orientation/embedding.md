@@ -128,7 +128,7 @@ func (r robot) talk() { fmt.Println("Bzzzzzbt") }
 type robby struct {
 	robot
 }
-func (r robot) talk() { fmt.Println("Again?") }
+func (r robby) talk() { fmt.Println("Again?") }
 
 robby := robby{}
 robby.talk()   // Again?
