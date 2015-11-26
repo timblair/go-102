@@ -8,22 +8,22 @@ Given our previous definition of an object, a custom `struct` type can contain
 the state (data) of an object.  But what about the behaviour?  That behaviour
 is provided by _methods_.
 
-Let's create a `Rectangle` type, with a width and a height. From this, it's
+Let's create a `rectangle` type, with a width and a height. From this, it's
 simple to calculate the area, so let's write a function to do that.
 
 ```go
-type Rectangle struct {
-	Width  int
-	Height int
+type rectangle struct {
+	width  int
+	height int
 }
 
-func Area(r Rectangle) int {
-	return r.Width * r.Height
+func area(r rectangle) int {
+	return r.width * r.height
 }
 
 func main() {
-	r := Rectangle{3, 4}
-	fmt.Println(Area(r))    // area 12
+	r := rectangle{3, 4}
+	fmt.Println(area(r))    // area 12
 }
 ```
 
@@ -38,18 +38,18 @@ receiver appears in its own argument list between the func keyword and the
 method name.
 
 ```go
-type Rectangle struct {
-	Width  int
-	Height int
+type rectangle struct {
+	width  int
+	height int
 }
 
-func (r Rectangle) Area() int {
-	return r.Width * r.Height
+func (r rectangle) area() int {
+	return r.width * r.height
 }
 
 func main() {
-	r := Rectangle{3, 4}
-	fmt.Println(r.Area())   // area 12
+	r := rectangle{3, 4}
+	fmt.Println(r.area())   // area 12
 }
 ```
 
@@ -57,13 +57,13 @@ Comparing the two versions, it's a very simple, yet powerful change.
 
 ```go
 // function, called with Area(r)
-func Area(r Rectangle) int {
-	return r.Width * r.Height
+func area(r rectangle) int {
+	return r.width * r.height
 }
 
 // method, called with r.Area()
-func (r Rectangle) Area() int {
-	return r.Width * r.Height
+func (r rectangle) area() int {
+	return r.width * r.height
 }
 ```
 

@@ -19,42 +19,42 @@ object in question to "speak." In Go, by convention, one-method interfaces are
 named by the method name plus an -er suffix.
 
 ```go
-type Speaker interface {
-	Speak() string
+type speaker interface {
+	speak() string
 }
 ```
 
-We'll now define three new types which satisfy our `Speaker` interface.  Note
+We'll now define three new types which satisfy our `speaker` interface.  Note
 that each type has methods that are specific to the type, in addition to the
-required `Speak` method required to satisfy the interface.
+required `speak` method required to satisfy the interface.
 
 ```go
-type Hipster struct { }
-func (h Hipster) Speak() string { return "Amazeballs" }
-func (h Hipster) TrimBeard() { /* ... */ }
+type hipster struct { }
+func (h hipster) speak() string { return "Amazeballs" }
+func (h hipster) trimBeard() { /* ... */ }
 
-type Dog struct { }
-func (d Dog) Speak() string { return "Woof" }
-func (d Dog) WagTail() { /* ... */ }
+type dog struct { }
+func (d dog) speak() string { return "Woof" }
+func (d dog) wagTail() { /* ... */ }
 
-type Robot struct { }
-func (r Robot) Speak() string { return "Does not compute" }
-func (r Robot) BecomeSentient() { /* ... */ }
+type robot struct { }
+func (r robot) speak() string { return "Does not compute" }
+func (r robot) becomeSentient() { /* ... */ }
 ```
 
 A value of an interface type can hold any value that satisfies the methods
 defined for the interface, so this means that a value of any of our
-newly-defined types can be assigned to a value of type `Speaker`:
+newly-defined types can be assigned to a value of type `speaker`:
 
 ```go
-// We can treat a Hipster as a Speaker
-var s1 Speaker
-s1 = Hipster{}
+// We can treat a hipster as a speaker
+var s1 speaker
+s1 = hipster{}
 
-// We can also create a slice of different Speakers
-speakers := []Speaker{Hipster{}, Dog{}, Robot{}}
+// We can also create a slice of different speakers
+speakers := []speaker{hipster{}, dog{}, robot{}}
 for _, s := range speakers {
-	fmt.Printf("%T: %s\n", s, s.Speak())
+	fmt.Printf("%T: %s\n", s, s.speak())
 }
 ```
 
@@ -62,12 +62,12 @@ Let's see a simple use of interfaces in action.  Let's define a new type which
 represents an email address, including the name of the recipient:
 
 ```go
-type Email struct {
+type email struct {
 	name string
 	address string
 }
 
-e := Email{"Tim Blair", "tim@bla.ir"}
+e := email{"Tim Blair", "tim@bla.ir"}
 fmt.Println(e)
 
 // {Tim Blair tim@bla.ir}
@@ -85,20 +85,28 @@ type Stringer interface {
 }
 ```
 
+As a quick aside, you may notice that the interface name and defined method
+above start with a capital letter.  Go doesn't have the concept of public or
+private methods; instead an identifier (constant, type, function, or method) is
+either _exported_ or _unexported_ from a package.  Exported identifiers are
+acessible outside the package; an unexported identifier is only accessible
+within the package that defines it.  You can think of them repectively as being
+similar to the `public` and `package` keywords in Java.
+
 By adding the `String` method to our type, it now satisfies the `Stringer`
 interface, and the fmt package will use that method when outputting our type.
 
 ```go
-type Email struct {
+type email struct {
 	name string
 	address string
 }
 
-func (e Email) String() string {
+func (e email) String() string {
 	return fmt.Sprintf("\"%s\" <%s>", e.name, e.address)
 }
 
-e := Email{"Tim Blair", "tim@bla.ir"}
+e := email{"Tim Blair", "tim@bla.ir"}
 fmt.Println(e)
 
 // "Tim Blair" <tim@bla.ir>

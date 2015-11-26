@@ -12,12 +12,12 @@ embedding_.
 Let's define two types that are shapes inside a 3D drawing package:
 
 ```go
-type Sphere struct {
-	X, Y, Z, Radius int
+type sphere struct {
+	x, y, z, radius int
 }
 
-type Cube struct {
-	X, Y, Z, Length int
+type cube struct {
+	x, y, z, length int
 }
 ```
 
@@ -25,49 +25,50 @@ Looking at these two types, and considering what new types we might want to
 create, we can see that the location of the shape is common to all shapes, so
 we're going to get a lot of repetition.
 
-We can factor out the common parts (the location) by creating a `Point` type,
+We can factor out the common parts (the location) by creating a `point` type,
 but this can make accessing the fields cumbersome and verbose, especially if we
 then used these types as part of further types.
 
 ```go
-type Point struct {
-	X, Y, Z int
+type point struct {
+	x, y, z int
 }
 
-type Sphere struct {
-	Point Point
-	Radius int
+type sphere struct {
+	point point
+	radius int
 }
 
-type Cube struct {
-	Point Point
-	Length int
+type cube struct {
+	point point
+	length int
 }
 
-var s Sphere
-s.Location.X = 5
-s.Location.Y = 5
-s.Radius = 3
+var s sphere
+s.location.x = 5
+s.location.y = 6
+s.location.y = 7
+s.radius = 3
 ```
 
 Go allows us to declare a field with a type but no name.  These fields are
 called _anonymous fields_, and are said to be _embedded_ within the type.  For
-example, we can embed `Point` within `Sphere` and `Cube`.
+example, we can embed `point` within `sphere` and `cube`.
 
 
 ```go
-type Point struct {
-	X, Y, Z int
+type point struct {
+	x, y, z int
 }
 
-type Sphere struct {
-	Point
-	Radius int
+type sphere struct {
+	point
+	radius int
 }
 
-type Cube struct {
-	Point
-	Length int
+type cube struct {
+	point
+	length int
 }
 ```
 
@@ -75,11 +76,11 @@ Go automatically "promotes" the embedded types so the fields within those types
 are accessible from the top level.
 
 ```go
-var s Sphere
-s.X = 5       // equivalent to s.Point.X = 5
-s.Y = 5       // equivalent to s.Point.Y = 5
-s.Z = 5       // equivalent to s.Point.Z = 5
-s.Radius = 3
+var s sphere
+s.x = 5       // equivalent to s.point.x = 5
+s.y = 6       // equivalent to s.point.y = 6
+s.z = 7       // equivalent to s.point.z = 7
+s.radius = 3
 ```
 
 Although embedded fields are known as _anonymous_, that's not strictly true:
@@ -90,15 +91,15 @@ There is no shorthand for defining struct literals with embedded types, so we
 have to declare each embedded type explicitly.
 
 ```go
-s1 := Sphere{Point{1, 2, 3}, 5}
+s1 := sphere{point{1, 2, 3}, 5}
 
-s2 := Sphere{
-	Point: Point{
+s2 := sphere{
+	point: point{
 		1,
 		2,
 		3,
 	},
-	Radius: 5,   // required trailing comma
+	radius: 5,   // required trailing comma
 }
 ```
 
@@ -107,48 +108,48 @@ also for methods on the inner type. This is the primary mechanism through which
 complex object behaviours are composed from simpler ones in Go.
 
 ```go
-type Robot struct { }
-func (r Robot) Talk() { fmt.Println("Bzzzzzbt") }
+type robot struct { }
+func (r robot) talk() { fmt.Println("Bzzzzzbt") }
 
-type Robby struct {
-	Robot
+type robby struct {
+	robot
 }
 
-robby := Robby{}
-robby.Talk()   // Bzzzzzbt
+robby := robby{}
+robby.talk()   // Bzzzzzbt
 ```
 
 The outer type can override the inner type's behaviour.
 
 ```go
-type Robot struct { }
-func (r Robot) Talk() { fmt.Println("Bzzzzzbt") }
+type robot struct { }
+func (r robot) talk() { fmt.Println("Bzzzzzbt") }
 
-type Robby struct {
-	Robot
+type robby struct {
+	robot
 }
-func (r Robot) Talk() { fmt.Println("Again?") }
+func (r robot) talk() { fmt.Println("Again?") }
 
-robby := Robby{}
-robby.Talk()   // Again?
+robby := robby{}
+robby.talk()   // Again?
 ```
 
 And methods promoted from an inner type can also allow the outer type so
 satisfy an interface.
 
 ```go
-type Talker interface { Talk() }
+type talker interface { talk() }
 
-type Robot struct{}
-func (r Robot) Talk() { fmt.Println("Bzzzzzbt") }
+type robot struct{}
+func (r robot) talk() { fmt.Println("Bzzzzzbt") }
 
-type Robby struct { Robot }
+type robby struct { robot }
 
-func talk(t Talker) {
-	t.Talk()
+func talk(t talker) {
+	t.talk()
 }
 
-talk(Robby{})
+talk(robby{})
 ```
 
 #### Exercise

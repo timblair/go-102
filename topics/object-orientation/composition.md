@@ -19,16 +19,16 @@ Let's put all these techniques together.  First we'll define a type
 representing a location, and two interfaces detailing behaviour.
 
 ```go
-type Point struct {
-	X, Y int
+type point struct {
+	x, y int
 }
 
-type Mover interface {
-	MoveTo(p Point)
+type mover interface {
+	moveTo(p point)
 }
 
-type Firer interface {
-	Fire()
+type firer interface {
+	fire()
 }
 ```
 
@@ -36,35 +36,35 @@ Now we'll define a new type for a vehicle, embedding the location.  We'll also
 make this type satisfy one of our interfaces.
 
 ```go
-type Vehicle struct {
-	Point
-	Passengers int
+type vehicle struct {
+	point
+	passengers int
 }
 
-func (v *Vehicle) MoveTo(p Point) {
-	v.Point = p
+func (v *vehicle) moveTo(p point) {
+	v.point = p
 }
 ```
 
 Let's also have a weapon, again satisfying the appropriate interface.
 
 ```go
-type Weapon struct {
-	Loaded bool
+type weapon struct {
+	loaded bool
 }
 
-func (w *Weapon) Fire() {
-	w.Loaded = false
+func (w *weapon) fire() {
+	w.loaded = false
 }
 ```
 
-With a bit more struct embedding, we can compose our `Vehicle` and `Weapon`
-types to create a `Tank`.
+With a bit more struct embedding, we can compose our `vehicle` and `weapon`
+types to create a `tank`.
 
 ```go
-type Tank struct {
-	Vehicle
-	Weapon
+type tank struct {
+	vehicle
+	weapon
 }
 ```
 
@@ -73,35 +73,35 @@ embedding, but with an interface.  It works in exactly the same way as with
 a struct.
 
 ```go
-type MoverFirer interface {
-	Mover
-	Firer
+type moverFirer interface {
+	mover
+	firer
 }
 
-func moveAndFire(mf MoverFirer, p Point) {
-	mf.MoveTo(p)
-	mf.Fire()
+func moveAndFire(mf moverFirer, p point) {
+	mf.moveTo(p)
+	mf.fire()
 }
 ```
 
-And finally, let's wrap everything together.  We'll create a new `Tank`, and
+And finally, let's wrap everything together.  We'll create a new `tank`, and
 then use our `moveAndFire` function to do just that.
 
 ```go
 func main() {
-	t := &Tank{
-		Vehicle{Point{5, 6}, 6},
-		Weapon{true},
+	t := &tank{
+		vehicle{point{5, 6}, 6},
+		weapon{true},
 	}
 
-	moveAndFire(t, Point{10, 20})
+	moveAndFire(t, point{10, 20})
 
 	fmt.Printf("Location: %v; Passengers: %d; Loaded: %t\n",
-		t.Point, t.Passengers, t.Loaded)
+		t.point, t.passengers, t.loaded)
 
 	// Location: {10 20}; Passengers: 6; Loaded: false
 }
 ```
 
 A complete, runnable version of the above example can be found on the [Go
-Playground](http://play.golang.org/p/IgLAwNX5ut).
+Playground](http://play.golang.org/p/k145c72ZV4).

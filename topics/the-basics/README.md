@@ -102,23 +102,23 @@ nil   // pointer, channel, func,
 
 A struct is a type which contains a collection of named fields. The `type`
 keyword introduces a new type. It's followed by the name of the type
-(`Rectangle`, in the following example), the keyword `struct` to indicate that
+(`rectangle`, in the following example), the keyword `struct` to indicate that
 we are defining a struct type and a list of fields inside of curly braces. Each
 field has a name and a type.
 
 ```go
-type Rectangle struct {
-	Width  int
-	Height int
+type rectangle struct {
+	width  int
+	height int
 }
 
-r1 := Rectangle{1, 2}       // New Rectangle with w + h
-r1.Width = 3                // Set width to a new value
-fmt.Printf("Width = %d; Height = %d\n", r1.Width, r1.Height)
+r1 := rectangle{1, 2}       // New rectangle with w + h
+r1.width = 3                // Set width to a new value
+fmt.Printf("Width = %d; Height = %d\n", r1.width, r1.height)
 
-var r2 Rectangle            // w=0, h=0 (int zero values)
-r4 := Rectangle{}           // w=0, h=0
-r3 := Rectangle{Height: 1}  // w=0, h=1
+var r2 rectangle            // w=0, h=0 (int zero values)
+r4 := rectangle{}           // w=0, h=0
+r3 := rectangle{Height: 1}  // w=0, h=1
 ```
 
 ### Functions
