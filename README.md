@@ -9,10 +9,10 @@ primitives which make concurrent programming in Go a breeze.
 * [Introduction](topics/the-basics): built-in types, variable declaration,
   function and custom types.
 * [Object oriented development](topics/object-orientation):
-  [methods](topics/object/orientation/methods.md),
-  [interfaces](topics/object/orientation/methods.md),
-  [embedding](topics/object/orientation/methods.md) and
-  [composition](topics/object/orientation/composition.md).
+  [methods](topics/object-orientation/methods.md),
+  [interfaces](topics/object-orientation/interfaces.md),
+  [embedding](topics/object-orientation/embedding.md) and
+  [composition](topics/object-orientation/composition.md).
 * [Concurrency](topics/concurrency):
   [goroutines](topics/concurrency/goroutines.md) and
   [channels](topics/concurrency/channels.md).
