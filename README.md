@@ -1,53 +1,43 @@
-# Go Workshop
+# Go 102
 
 ## Overview
 
-The principle goal of this workshop it to get you excited about Go! We’ll be
-focussing on two key areas: object oriented development in Go, and the powerful
-primitives which make concurrent programming in Go a breeze.
+[Go](https://golang.org/) is a small language, but one with a few differences
+to many common languages.  For example, Go supports an OO-style of development,
+but doesn't have classes, and it has built-in primitives to simplify concurrent
+programming.
+
+The content in this repository is aimed at introducing these concepts to someone
+new to Go (but not new to programming in general).  The content is split in to
+the following sections:
 
 * [Introduction](topics/the-basics): built-in types, variable declaration,
   function and custom types.
-* [Object oriented development](topics/object-orientation):
-  [methods](topics/object-orientation/methods.md),
-  [interfaces](topics/object-orientation/interfaces.md),
-  [embedding](topics/object-orientation/embedding.md) and
-  [composition](topics/object-orientation/composition.md).
-* [Concurrency](topics/concurrency):
-  [goroutines](topics/concurrency/goroutines.md) and
-  [channels](topics/concurrency/channels.md).
+* [Object-oriented development](topics/object-orientation)
+    * [Methods](topics/object-orientation/methods.md)
+    * [Interfaces](topics/object-orientation/interfaces.md)
+    * [Embedding](topics/object-orientation/embedding.md)
+    * [Composition](topics/object-orientation/composition.md)
+* [Concurrency](topics/concurrency)
+    * [Goroutines](topics/concurrency/goroutines.md)
+    * [Channels](topics/concurrency/channels.md)
 
-In each section we'll walk through a number of examples and code samples, and
-will work through some coding exercises in pairs, either using a local Go
-installation or the Go Playground.
+Each section explains the relevant concepts, walks through a number of examples
+and code samples, and ends with an exercise to put the concepts in to practice.
 
 ## Pre-Requisites
 
-This workshop is designed for folks who have some basic knowledge of Go, but
-not necessarily any practical experience with it.  Attendees are also expected
-to have practical experience with the principles behind Object Oriented
-software development (in any language).
-
-I will recap some basics at the beginning of the workshop, but you'll get more
-out of it if you already have knowledge of variable declaration, functions, and
-struct types. I suggest you watch the first half of my recent [introductory
-talk on Go](https://vimeo.com/140410716) (the "Data & Types" section), or a
-least look through the [slide
-deck](https://speakerdeck.com/timblair/introduction-to-go).
-
-## What You'll Need to Bring
-
-As long as you have a working laptop (or a friend with one, as we'll be pairing
-for the exercises), then you’re good to go.  You don’t even need Go installed
-on your machine, because you can use the online [Go
-Playground](http://play.golang.org/) instead for the exercises.
+Although you need have no real experience with Go itself, this is not a
+"learning to code" guide.  Specifically, you are expected to have practical
+experience with the principles behind object-oriented software development (in
+any language).
 
 ## Exercises
 
 There are templates available for each of the exercises.  If you've cloned this
-repo under your `$GOPATH` then you can just edit and run the template file in
-place.  Alternatively, follow the link to the template already set up in the Go
-Playground, and work from there instead.
+repository under your `$GOPATH` then you can just edit and run the template
+file in place.  Alternatively, follow the link to the template already set up
+in the Go Playground, and work from there instead.
 
 * The Basics: [source](topics/the-basics/exercises/basics/template/basics.go) /
   [playground](http://play.golang.org/p/ta6oFzjgwn)
@@ -66,6 +56,15 @@ Playground, and work from there instead.
 
 Example solutions are also available, but don't look at those until you've had
 a go yourself!
+
+## Running a Workshop
+
+This guide can be used as an individual study-aid, but it was designed to be
+presented as a hands-on workshop.  In this format, the workshop should take
+around four hours, with each section talked through by the presenter, before
+the participants work through the relevant exercise (preferably in pairs).  An
+[accompanying slide deck](https://speakerdeck.com/timblair/go-102-a-workshop)
+is available on Speaker Deck.
 
 ## License
 
