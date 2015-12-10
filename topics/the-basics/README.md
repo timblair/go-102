@@ -1,4 +1,4 @@
-# Go 102 Workshop
+# Go 102
 
 ## The Basics
 

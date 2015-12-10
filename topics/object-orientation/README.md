@@ -1,4 +1,4 @@
-# Go 102 Workshop
+# Go 102
 
 ## Object-Oriented Programming in Go
 
