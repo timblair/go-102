@@ -66,6 +66,12 @@ the participants work through the relevant exercise (preferably in pairs).  An
 [accompanying slide deck](https://speakerdeck.com/timblair/go-102-a-workshop)
 is available on Speaker Deck.
 
+## Attribution
+
+The gopher image on the cover is by [Renee
+French](http://reneefrench.blogspot.co.uk/).  The buffered and unbuffered
+channel images are from [Ardan Labs](https://github.com/ardanlabs/gotraining).
+
 ## License
 
 <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img
