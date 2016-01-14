@@ -1,7 +1,7 @@
 # Summary
 
-* [Introduction](topics/the-basics/README.md)
-* [Object-oriented development](topics/object-orientation/README.md)
+* [The Basics](topics/the-basics/README.md)
+* [Object-Oriented Programming](topics/object-orientation/README.md)
     * [Methods](topics/object-orientation/methods.md)
     * [Interfaces](topics/object-orientation/interfaces.md)
     * [Embedding](topics/object-orientation/embedding.md)
