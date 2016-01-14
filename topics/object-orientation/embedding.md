@@ -1,8 +1,6 @@
-# Go 102
+# Object-Oriented Programming
 
-## Object-Oriented Programming in Go
-
-### Embedding
+## Embedding
 
 Go's type system does not typical OO inheritance; instead it supports
 composition with the ability to "borrow" functionality by embedding named types
@@ -152,7 +150,7 @@ func talk(t talker) {
 talk(robby{})
 ```
 
-#### Exercise
+### Exercise
 
 > Create a user type, and an admin type that embeds a user. Create a Notifier
 > interface, and make your user type satisfy that interface. Write a function

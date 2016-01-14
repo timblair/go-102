@@ -1,8 +1,6 @@
-# Go 102
+# Object-Oriented Programming
 
-## Object-Oriented Programming in Go
-
-### Methods
+## Methods
 
 Given our previous definition of an object, a custom `struct` type can contain
 the state (data) of an object.  But what about the behaviour?  That behaviour
@@ -71,7 +69,7 @@ It's actually worth pointing out that the `method` version is effectively just
 syntactic sugar: under the hood it takes the receiver and puts it as the first
 argument, just as happens in the function version.
 
-#### Exercise
+### Exercise
 
 > Declare a new struct type to hold information about a tennis player,
 > including the number of matches played and the number won.  Add a method to

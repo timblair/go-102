@@ -1,6 +1,4 @@
-# Go 102
-
-## Object-Oriented Programming in Go
+# Object-Oriented Programming
 
 From the [Go FAQ](https://golang.org/doc/faq#Is_Go_an_object-oriented_language):
 

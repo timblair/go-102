@@ -1,8 +1,6 @@
-# Go 102
+# Object-Oriented Programming
 
-## Object-Oriented Programming in Go
-
-### Composition
+## Composition
 
 We've now introduced the building blocks for Go's powerful composition
 techniques: custom types, methods, interfaces, and struct embedding.

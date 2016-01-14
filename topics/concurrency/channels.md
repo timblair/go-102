@@ -1,8 +1,6 @@
-# Go 102
+# Concurrency
 
-## Concurrency
-
-### Channels
+## Channels
 
 When using the traditional threading models commonly used in Java, C++ and
 Python, for example, communication between threads is usually performed through
@@ -285,7 +283,7 @@ Serena won!
 A complete, runnable version of the above example can be found on the [Go
 Playground](http://play.golang.org/p/Q4z-QyL4D8).
 
-#### Exercise
+### Exercise
 
 > Let's simulate a track relay race.  Create a channel representing a track,
 > and a function representing a runner.  Pass a baton between runners over the

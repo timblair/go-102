@@ -1,8 +1,6 @@
-# Go 102
+# The Basics
 
-## The Basics
-
-### Hello World
+## Hello World
 
 ```go
 package main
@@ -26,7 +24,7 @@ library, which implements functions that deal with formatted I/O.  The `main()`
 function is the entry point for when the compiled binary file gets run, and it
 uses the `Println` function from the `fmt` package to write to STDOUT.
 
-### Types
+## Types
 
 Go is strongly and statically typed: all values have a specific type.
 
@@ -51,7 +49,7 @@ cheap to copy.
 In the workshop today, we'll only be focussing on structs and channels, as well
 as the basic types (booleans, numerics and strings).
 
-### Basic Types
+## Basic Types
 
 ```go
 b1 := true         // type is bool
@@ -67,7 +65,7 @@ s1 := `Raw string literal`
 s2 := "Interpreted string literal"
 ```
 
-### Variable Declaration
+## Variable Declaration
 
 ```go
 var x T         // Variable x of type T with a zero value
@@ -85,7 +83,7 @@ make(T)         // make takes a type T, which must be a slice,
 You can also use `new(T)`, which allocates zeroed storage for a new value of
 type T and returns its address.
 
-### Zero Values
+## Zero Values
 
 Every type has a zero value. For the Rubyists, note that a boolean, numeric or
 string can never be `nil`.
@@ -98,7 +96,7 @@ nil   // pointer, channel, func,
       // interface, map, or slice
 ```
 
-### Structs
+## Structs
 
 A struct is a type which contains a collection of named fields. The `type`
 keyword introduces a new type. It's followed by the name of the type
@@ -121,7 +119,7 @@ r4 := rectangle{}           // w=0, h=0
 r3 := rectangle{Height: 1}  // w=0, h=1
 ```
 
-### Functions
+## Functions
 
 A function is an independent section of code that maps zero or more input
 parameters to zero or more output parameters. In Go, they are values like any
@@ -142,7 +140,7 @@ func f6() (int, string) {   // Multiple return values
 }
 ```
 
-## Exercise
+# Exercise
 
 > Declare a struct type to maintain information about a person.  Declare a
 > function that creates new values of your type.  Call this function from main

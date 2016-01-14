@@ -1,8 +1,6 @@
-# Go 102
+# Object-Oriented Programming
 
-## Object-Oriented Programming in Go
-
-### Interfaces
+## Interfaces
 
 In Go, interfaces provide polymorphism, just like in any other OO language, by
 declaring the behaviour of a type, and an interface is defined by the set of
@@ -112,7 +110,7 @@ fmt.Println(e)
 // "Tim Blair" <tim@bla.ir>
 ```
 
-#### Exercise
+### Exercise
 
 > Define an interface which defines a method area().  Create types for square,
 > rectangle and circle, and ensure they satisfy your interface.  Create a
