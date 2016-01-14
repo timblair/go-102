@@ -7,9 +7,9 @@ to many common languages.  For example, Go supports an OO-style of development,
 but doesn't have classes, and it has built-in primitives to simplify concurrent
 programming.
 
-The content in this repository is aimed at introducing these concepts to someone
-new to Go (but not new to programming in general).  The content is split in to
-the following sections:
+The content in this book is aimed at introducing these concepts to someone new
+to Go (but not new to programming in general).  The content is split in to the
+following sections:
 
 * [Introduction](topics/the-basics): built-in types, variable declaration,
   function and custom types.
@@ -65,6 +65,12 @@ around four hours, with each section talked through by the presenter, before
 the participants work through the relevant exercise (preferably in pairs).  An
 [accompanying slide deck](https://speakerdeck.com/timblair/go-102-a-workshop)
 is available on Speaker Deck.
+
+## Attribution
+
+The gopher image on the cover is by [Renee
+French](http://reneefrench.blogspot.co.uk/).  The buffered and unbuffered
+channel images are from [Ardan Labs](https://github.com/ardanlabs/gotraining).
 
 ## License
 
