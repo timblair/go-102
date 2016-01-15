@@ -43,9 +43,9 @@ type cube struct {
 }
 
 var s sphere
-s.location.x = 5
-s.location.y = 6
-s.location.y = 7
+s.point.x = 5
+s.point.y = 6
+s.point.z = 7
 s.radius = 3
 ```
 
