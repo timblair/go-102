@@ -66,6 +66,13 @@ the participants work through the relevant exercise (preferably in pairs).  An
 [accompanying slide deck](https://speakerdeck.com/timblair/go-102-a-workshop)
 is available on Speaker Deck.
 
+## Source and Contributing
+
+The source for this material is [available on
+GitHub](https://github.com/timblair/go-102). Please raise any issues there, and
+contributions (fixing typos, better formatting, improvements to code examples
+etc) are more than welcome.
+
 ## Attribution
 
 The gopher image on the cover is by [Renee
