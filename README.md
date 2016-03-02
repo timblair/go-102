@@ -11,14 +11,14 @@ The content in this book is aimed at introducing these concepts to someone new
 to Go (but not new to programming in general).  The content is split in to the
 following sections:
 
-* [Introduction](topics/the-basics): built-in types, variable declaration,
+* [Introduction](topics/the-basics/): built-in types, variable declaration,
   function and custom types.
-* [Object-oriented development](topics/object-orientation)
+* [Object-oriented development](topics/object-orientation/)
     * [Methods](topics/object-orientation/methods.md)
     * [Interfaces](topics/object-orientation/interfaces.md)
     * [Embedding](topics/object-orientation/embedding.md)
     * [Composition](topics/object-orientation/composition.md)
-* [Concurrency](topics/concurrency)
+* [Concurrency](topics/concurrency/)
     * [Goroutines](topics/concurrency/goroutines.md)
     * [Channels](topics/concurrency/channels.md)
 
