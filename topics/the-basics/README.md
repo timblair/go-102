@@ -116,7 +116,7 @@ fmt.Printf("Width = %d; Height = %d\n", r1.width, r1.height)
 
 var r2 rectangle            // w=0, h=0 (int zero values)
 r4 := rectangle{}           // w=0, h=0
-r3 := rectangle{Height: 1}  // w=0, h=1
+r3 := rectangle{height: 1}  // w=0, h=1
 ```
 
 ## Functions
