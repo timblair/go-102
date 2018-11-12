@@ -57,17 +57,17 @@ c3 := make(chan int, 100)  // Buffered
 The differences behind the operation of buffered and unbuffered channels is
 neatly illustrated by the following diagrams (courtesy of [Ardan Labs'
 fantastic Go Training course
-material](https://github.com/ardanlabs/gotraining/tree/master/topics/channels)).
+material](https://github.com/ardanlabs/gotraining/tree/master/topics/go/concurrency/channels)).
 
 Unbuffered channel:
 
-![Unbuffered](https://raw.githubusercontent.com/ardanlabs/gotraining/master/topics/channels/unbuffered.png)
+![Unbuffered](https://raw.githubusercontent.com/ardanlabs/gotraining/master/topics/go/concurrency/channels/unbuffered.png)
 
 An unbuffered channel is also commonly referred to as a `synchronous` channel.
 
 Buffered channel:
 
-![Buffered](https://raw.githubusercontent.com/ardanlabs/gotraining/master/topics/channels/buffered.png)
+![Buffered](https://raw.githubusercontent.com/ardanlabs/gotraining/master/topics/go/concurrency/channels/buffered.png)
 
 It's tempting to use a buffered channel within a single goroutine as a simple
 queue, but it's very easy for your program to become deadlocked without another
